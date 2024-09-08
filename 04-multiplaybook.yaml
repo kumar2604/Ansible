@@ -1,0 +1,12 @@
+- name: SHORTFILM-1
+  hosts: localhost
+  tasks: 
+  -  name: SHORTFILM-1 and SCENE-1
+     ansible.builtin.debug:
+       msg: "Hello, I am from SHORTFILM-1 and SCENE-1"
+- name: SHORTFILM-1
+  hosts: localhost
+  tasks:       
+  -  name: SHORTFILM-2 and SCENE-1
+     ansible.builtin.debug:
+       msg: "Hello, I am from SHORTFILM-2 and SCENE-1"    
