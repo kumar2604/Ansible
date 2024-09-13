@@ -1,0 +1,24 @@
+- name: default value
+  hosts: localhost
+  tasks:
+  - name: print default value
+    ansible.builtin.debug:
+      msg: "Hello {{ course | default('Ansible') }}"
+
+- name: uppercase
+  hosts: localhost
+  vars:
+    greeting: "Hi, Good Afternoon"
+  tasks:
+  - name: convert into uppercase
+    ansible.builtin.debug:
+      msg: "{{ greeting | upper }}" 
+
+- name: lowercase
+  hosts: localhost
+  vars:
+    greeting: "Hi, Good Afternoon"
+  tasks:
+  - name: convert into lowercase
+    ansible.builtin.debug:
+      msg: "{{ greeting | lower }}"           
