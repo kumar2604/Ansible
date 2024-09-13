@@ -12,4 +12,22 @@
 
   - name: After convert
     ansible.builtin.debug:
-      msg: "After convert: {{ my_dict | dict2items }}"     
+      msg: "After convert: {{ my_dict | dict2items }}"
+
+
+- name: convert items into dictionary
+  hosts: localhost
+  vars:
+    my_list:
+      - {'key': 'Course', 'value': 'Terraform'}
+      - {'key': 'Trainer', 'value': 'Rahul'}
+      - {'key': 'Duration', 'value': '100hrs'}
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "Before convert: {{ my_list }}"
+
+  - name: After convert
+    ansible.builtin.debug:
+      msg: "After convert: {{ my_list | items2dict }}"    
+               
