@@ -1,0 +1,15 @@
+- name: convert dictionary into items/list
+  hosts: localhost
+  vars:
+    my_dict:  # This is called as dictionary or mapor key/value pairs.
+      Course: Terraform
+      Trainer: Rahul
+      Duration: 100hrs
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "Before convert: {{ my_dict }}"
+
+  - name: After convert
+    ansible.builtin.debug:
+      msg: "After convert: {{ my_dict | dict2items }}"     
